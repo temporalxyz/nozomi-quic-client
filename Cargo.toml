@@ -1,0 +1,24 @@
+[package]
+name = "nozomi-quic-client"
+version = "0.1.0"
+edition = "2021"
+description = "Ultra-low-latency QUIC/H3 client for Nozomi Solana transaction submission"
+
+[dependencies]
+bytes = "1"
+h3 = "0.0.8"
+h3-quinn = "0.0.10"
+http = "1"
+quinn = "0.11"
+rustls = { version = "0.23", features = ["aws-lc-rs"] }
+rustls-native-certs = "0.8"
+tokio = { version = "1", features = ["rt", "net", "sync", "time"] }
+
+[dev-dependencies]
+env_logger = "0.11"
+serde_json = "1"
+solana-rpc-client = "4.0.0-beta"
+solana-sdk = "4"
+solana-system-interface = { version = "3", features = ["wincode"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+wincode = "0.4"
